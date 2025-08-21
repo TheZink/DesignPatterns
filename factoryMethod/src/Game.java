@@ -7,7 +7,7 @@ public class Game {
     public static void main(String[] args){
 
         // Promt user to choose terrain
-        System.out.println("Choose terrain -> (c)ity or (w)ilderness. Type 'e' to exit");
+        System.out.println("Choose terrain. (C)ity or (W)ilderness. Type 'e' to exit");
         Scanner input = new Scanner(System.in);
 
         String userInput;
@@ -25,16 +25,21 @@ public class Game {
                 map.createTile();
                 map.display();
 
+                System.out.println("Select terrain (c or w) or press 'e' to exit");
+
             // Generate WildernessMap
             } else if (userInput.equals("w")) {
 
                 map = new WildernessMap();
                 map.createTile();
                 map.display();
+                
+                System.out.println("Select terrain (c or w) or press 'e' to exit");
 
             } else if (!userInput.equals("e")) {
                 System.out.println(userInput + " is an unknown input");
             }
+
             
         } while (!userInput.equals("e"));
 
