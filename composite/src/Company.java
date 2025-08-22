@@ -23,7 +23,6 @@ public class Company extends Component {
     // Handle Company department and save to the XML
     @Override
     public String printXml(){
-        StringBuilder xml = new StringBuilder();
 
         // Opening tag
         xml.append("<Company name\"").append(name).append("\">\n");
