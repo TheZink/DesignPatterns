@@ -44,8 +44,6 @@ public class Main {
         org.add(dep2);
         org.add(dep3);
 
-        System.out.println("Testitulostus ");
-
         // Write data to XML-file
         try (FileWriter writer = new FileWriter("organization.xml")) {
             writer.write(org.printXml());
