@@ -9,7 +9,7 @@ public class Employees  extends Component {
     public void add(Component component){};
     public void remove(Component component){};
     public String printXml(){
-        return " <employee name=\"" + name + "\" salary=\"" + salary + "\">\n";
+        return "  <Employee name=\"" + name + "\" salary=\"" + salary + "\">\n";
     }
 
     public Component getChild(int inderx){

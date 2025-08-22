@@ -19,15 +19,18 @@ public class Department extends Component {
         this.department.remove(component);
     };
 
+    // Handle Department employees and save to the XML
     @Override
     public String printXml(){
 
+        // Opening tag
         xml.append(" <Department name=\"").append(name).append("\">\n");
 
         for (Component employee : department) {
             xml.append(employee.printXml());
         }
 
+        // Closing tag
         xml.append(" </Department>\n");
 
         return xml.toString();
