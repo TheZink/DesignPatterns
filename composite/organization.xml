@@ -1,0 +1,18 @@
+<Company name"Testiyritys Oy">
+ <Department name="Kehitys">
+  <Employee name="Jarkko" salary="4500.0">
+  <Employee name="Pauli" salary="4300.0">
+  <Employee name="Jukka" salary="4600.0">
+  <Employee name="Lotta" salary="4700.0">
+ </Department>
+ <Department name="Laskutus">
+  <Employee name="Leena" salary="3500.0">
+  <Employee name="Robert" salary="3200.0">
+ </Department>
+ <Department name="Tuotanto">
+  <Employee name="Leevi" salary="3900.0">
+  <Employee name="Hanna" salary="4100.0">
+  <Employee name="Anita" salary="4300.0">
+  <Employee name="Saara" salary="3990.0">
+ </Department>
+</Company>

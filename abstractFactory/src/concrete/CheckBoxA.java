@@ -8,12 +8,9 @@ public class CheckBoxA extends Checkbox {
     }
 
     public void display(){
-        System.out.println("+------------------+\n");
-
-        System.out.println("CheckBox= " + text + "\n");
-
-        System.out.println("+------------------+\n");
-
+        System.out.println("+------------------+\n" +
+                            "Checkbox= " + text + "\n" +
+                            "+------------------+\n");
 
     }
 

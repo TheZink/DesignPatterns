@@ -8,11 +8,9 @@ public class ButtonA extends Button {
     }
     
     public void display(){
-        System.out.println("+------------------+\n");
-
-        System.out.println("Button= " + text + "\n");
-
-        System.out.println("+------------------+\n");
+        System.out.println("+------------------+\n" +
+                            "Button= " + text + "\n" +
+                            "+------------------+\n");
 
     }
 

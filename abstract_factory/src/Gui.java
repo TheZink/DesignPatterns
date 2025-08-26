@@ -1,7 +1,7 @@
-package src;
+package main;
 
-import src.concrete.AFactory;
-import src.concrete.BFactory;
+import main.concrete.AFactory;
+import main.concrete.BFactory;
 
 public class Gui {
 
@@ -9,9 +9,7 @@ public class Gui {
         UIFactory factA = new AFactory();
         UIFactory factB = new BFactory();
 
-        System.out.println("Starting programm.\n");
-
-        System.out.println("**Using Facotry A**\n");
+        System.out.println("Starting programm.");
 
         Button buttonA = factA.createButton("Created buttonA");
         Checkbox checkBoxA = factA.createCheckBox("Created CheckboxA");
@@ -20,8 +18,6 @@ public class Gui {
         buttonA.display();
         checkBoxA.display();
         textFieldA.display();
-
-        System.out.println("**Using Factory B**\n");
 
         Button buttonB = factB.createButton("Changed to buttonB");
         Checkbox checkBoxB = factB.createCheckBox("Changed to checkBoxB");

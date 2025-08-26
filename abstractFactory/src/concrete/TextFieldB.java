@@ -8,11 +8,9 @@ public class TextFieldB extends TextField{
     }
 
     public void display(){
-        System.out.println("+------------------+\n");
-
-        System.out.println("TextField= " + text + "\n");
-
-        System.out.println("+------------------+\n");
+        System.out.println("+------------------+\n" +
+                            "Textfield= " + text + "\n" +
+                            "+------------------+\n");
     }
 
 
