@@ -1,4 +1,4 @@
-package com.state.states;
+package com.state.savestates;
 
 import com.state.Machine;
 import com.state.State;
@@ -26,10 +26,9 @@ public class SaveState extends State{
         userData.addProperty("health", this.getMachine().getHealth());
 
         // Save user data to json
-
         Gson gson = new Gson();
 
-        try(FileWriter writer = new FileWriter("src/main/java/com/state/savedata/ " + this.getMachine().getName() + ".json")){
+        try(FileWriter writer = new FileWriter("src/main/java/com/state/savedata/" + this.getMachine().getName() + ".json")){
             gson.toJson(userData, writer);
             System.out.println("Data was saved successfully");
         } catch (IOException e){

@@ -34,13 +34,13 @@ public class Machine {
             System.out.println(i + ". " + options[i-1]);
         }
         String choice = scanner.nextLine();
+
         return Integer.parseInt(choice);
     }
 
     public String userInput(String promt){
         System.out.println(promt);
         String input = scanner.nextLine();
-        System.out.println("Your name is : " + input);
 
         return input;
     }
@@ -88,6 +88,12 @@ public class Machine {
 
     public int getHealth(){
         return playerData.getHealth();
+    }
+
+    public void printData(){
+        System.out.println("Name: " + getName() + "\n" +
+                            "Score: " + getScore() + "\n" +
+                            "Healt: " + getHealth() + "\n");
     }
 
 }

@@ -2,6 +2,8 @@ package com.state.states;
 
 import com.state.Machine;
 import com.state.State;
+import com.state.savestates.LoadState;
+import com.state.savestates.SaveState;
 
 public class ReadyState extends State {
 
@@ -18,32 +20,38 @@ public class ReadyState extends State {
             String[] options = {"Create new save", "Select save"};
             switch (this.getMachine().userChoice(options)) {
                 
-                // If player want create a profile
+                // // If the player wants to create a profile, prompt for a name and change state
                 case 1:
-                    String name = this.getMachine().userInput("What is your name?");
-                    this.getMachine().setName(name);
+                    String createName = this.getMachine().userInput("What is your name?");
+                    this.getMachine().setName(createName);
                     this.getMachine().setCurrentState(new SaveState(getMachine()));
                     break;
 
-                // If player wants use existing profile
+                // // If the player wants to use an existing profile, prompt for a name and change state
                 case 2:
-                    System.out.println("Case 2");
+                    String loadName = this.getMachine().userInput("What is your profile name?");
+                    this.getMachine().setName(loadName);
+                    this.getMachine().setCurrentState(new LoadState(getMachine()));
                     break;
+                
+                // Give input error
                 default:
-                    System.out.println("Error in input. Try again");
+                    System.out.println("Error input. Try again");
             }
 
         } else if (this.getMachine().getName() != null){
 
-            System.out.println("What level you want to choose?");
+            this.getMachine().printData();
+
+            System.out.println("Which level do you want to choose?");
             String[] options = {"Novice", "Intermediate", "Expert", "Master", "Save", "Exit"};
 
             switch (this.getMachine().userChoice(options)) {
                 case 1:
-                    System.out.println("You choosed Novice. Noob!");
+                    this.getMachine().setCurrentState(new NoviceState(getMachine()));
                     break;
                 case 2:
-                    System.out.println("You choosed Novice. Its a progress!");
+                    System.out.println("You choosed Intermediate. Its a progress!");
                     break;
                 case 3:
                     System.out.println("You choosed Novice. Badass!");
@@ -56,10 +64,11 @@ public class ReadyState extends State {
                     this.getMachine().setCurrentState(new SaveState(getMachine()));
                     break;
                 case 6:
+                    this.getMachine().setCurrentState(null);
                     return;
 
                 default:
-                    System.out.println("Wrong input. Try again");
+                    System.out.println("Wrong input. Try again.");
                 
             }
         }
