@@ -91,7 +91,8 @@ public class Machine {
     }
 
     public void printData(){
-        System.out.println("Name: " + getName() + "\n" +
+        System.out.println("Character stats\n" +
+                            "Name: " + getName() + "\n" +
                             "Score: " + getScore() + "\n" +
                             "Healt: " + getHealth() + "\n");
     }

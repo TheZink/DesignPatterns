@@ -12,16 +12,22 @@ public class NoviceState extends State{
     public NoviceState(Machine machine){
         super(machine);
         this.score = this.getMachine().getScore();
-        
     }
 
     @Override
     public void action(){
 
         String[] options = {"Continue training","Stop training"};
-        System.out.println("You have enteret to the training camp.");
+        this.getMachine().printData();
         
         while (true){
+
+            if (score >= 15) {
+                System.out.println("You gained enough points! You are moving to the Intermediate-level\n");
+                this.getMachine().setScore(score);
+                this.getMachine().setCurrentState(new MasterState(this.getMachine()));
+                return;
+            }
 
             try{
                 
@@ -49,7 +55,6 @@ public class NoviceState extends State{
                     this.getMachine().setScore(score);
                     this.getMachine().setCurrentState(new ReadyState(this.getMachine()));
                     return;
-                default:
             }
             
         }

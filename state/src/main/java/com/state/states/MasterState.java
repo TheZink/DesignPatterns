@@ -11,6 +11,10 @@ public class MasterState extends State{
 
     @Override
     public void action(){
+        System.out.println("You have gained a Master-level. Thank you for playing.\n");
+        this.getMachine().printData();
+        
+        // TODO;
     }
 
 
