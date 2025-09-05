@@ -24,6 +24,8 @@ public class SaveState extends State{
         userData.addProperty("name", this.getMachine().getName());
         userData.addProperty("score", this.getMachine().getScore());
         userData.addProperty("health", this.getMachine().getHealth());
+        userData.addProperty("level", this.getMachine().getLevel());
+
 
         // Save user data to json
         Gson gson = new Gson();

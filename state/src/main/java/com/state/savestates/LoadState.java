@@ -28,6 +28,8 @@ public class LoadState extends State {
             this.getMachine().setName(userData.get("name").getAsString());
             this.getMachine().setScore(userData.get("score").getAsInt());
             this.getMachine().setHealth(userData.get("health").getAsInt());
+            this.getMachine().setLevel(userData.get("level").getAsString());
+
 
             System.out.println("Load is complete!\n");
 

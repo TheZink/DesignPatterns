@@ -48,24 +48,18 @@ public class ReadyState extends State {
 
             switch (this.getMachine().userChoice(options)) {
                 case 1:
-                    System.out.println("You have enteret to the training camp.");
                     this.getMachine().setCurrentState(new NoviceState(getMachine()));
                     break;
                 case 2:
-                    System.out.println("You have entered to the training camp.\n" +
-                                    "You can train or meditate in this level.");
-                    System.out.println();
                     this.getMachine().setCurrentState(new IntermediateState(getMachine()));
                     break;
                 case 3:
-                    System.out.println("You choosed Novice. Badass!");
                     this.getMachine().setCurrentState(new ExpertState(getMachine()));
                     break;
                 case 4:
-                    System.out.println("Yes my master!");
+                    this.getMachine().setCurrentState(new MasterState(getMachine()));
                     break;
                 case 5:
-                    System.out.println("Saving game.");
                     this.getMachine().setCurrentState(new SaveState(getMachine()));
                     break;
                 case 6:

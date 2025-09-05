@@ -10,6 +10,7 @@ public class Player {
         this.name = null;
         this.score = 0;
         this.health = 100;
+        this.level = "Novice";
     }
 
     public void setName(String name) {

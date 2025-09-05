@@ -11,10 +11,17 @@ public class MasterState extends State{
 
     @Override
     public void action(){
-        System.out.println("You have gained a Master-level. Thank you for playing.\n");
-        this.getMachine().printData();
+        if (this.getMachine().getScore() < 20){
+            System.out.println("\nYou dont have enough XP for this level!\n");
+        } 
         
-        // TODO;
+        else {
+            System.out.println("You have reached to the Master-level! Thank you for playing.\n" + 
+                                "Closing game!\n");
+            this.getMachine().printData();
+            this.getMachine().setCurrentState(null);
+        }
+
     }
 
 
