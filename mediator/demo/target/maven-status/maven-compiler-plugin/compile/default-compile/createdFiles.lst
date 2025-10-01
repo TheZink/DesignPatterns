@@ -1,0 +1,6 @@
+com\example\mediator\Mediator.class
+com\example\mediator\ConcreteMediator.class
+com\example\controller\ChatController.class
+com\example\Main.class
+com\example\Model\Message.class
+com\example\view\GUI.class
