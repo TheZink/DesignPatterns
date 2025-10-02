@@ -1,8 +1,9 @@
 package com.example.mediator;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import com.example.Model.Message;
 import com.example.controller.ChatController;
@@ -13,6 +14,7 @@ public class ConcreteMediator implements Mediator{
     @Override
     public void registerClient(String username, ChatController client){
         clients.put(username, client);
+        updateList();
     }
 
     @Override
@@ -25,8 +27,13 @@ public class ConcreteMediator implements Mediator{
 
     }
 
-    public Set<String> getAllUsernames(){
-        return clients.keySet();
+    public List<String> getAllUsernames(){
+        return new ArrayList<>(clients.keySet());
     }
 
+    public void updateList(){
+        for (ChatController controller : clients.values()){
+            controller.setUser();
+        }
+    }
 }

@@ -7,6 +7,9 @@ import javafx.scene.control.Button;
 
 
 import com.example.mediator.Mediator;
+
+import java.util.List;
+
 import com.example.Model.Message;
 
 public class ChatController {
@@ -28,7 +31,7 @@ public class ChatController {
         
         mediator.registerClient(username, this);
 
-        sendButton.setOnAction(e -> sendMessage());
+        sendButton.setOnAction(e -> sendMessage());      
     }
 
     public void sendMessage(){
@@ -39,14 +42,17 @@ public class ChatController {
             Message message = new Message(messageText, recipient, username);
             mediator.sendMessage(message);
             inputField.clear();
-            messageArea.appendText("To: " + recipient + ": " + messageText + "\n");
+            messageArea.appendText("To " + recipient + " -> " + messageText + "\n");
         }
     }
 
     public void receiveMessage(String sender, String message){
-        messageArea.appendText("From: " + sender + ": " + message + "\n");
+        messageArea.appendText("From " + sender + " -> " + message + "\n");
     }
 
-
-
+    public void setUser(){
+        List<String> users = mediator.getAllUsernames();
+        users.remove(username);
+        recipientBox.getItems().setAll(users);
+    }
 }

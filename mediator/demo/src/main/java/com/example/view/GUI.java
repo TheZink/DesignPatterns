@@ -22,7 +22,7 @@ public class GUI extends Application{
 
     @Override
     public void start(Stage primaryStage){
-        primaryStage.setTitle("Amazing chat window");
+        primaryStage.setTitle("Amazing chat window. You are " + username);
 
         TextArea messageArea = new TextArea();
         messageArea.setEditable(false);
