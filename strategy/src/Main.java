@@ -4,7 +4,7 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
         int[] smallArray = randomGenerator(3000);
-        int[] largeArray = randomGenerator(100000);
+        int[] largeArray = randomGenerator(10000000);
 
         runAlgorithm("BubbleSort", new BubbleSort(), Arrays.copyOf(smallArray, smallArray.length), Arrays.copyOf(largeArray, largeArray.length));
         runAlgorithm("Quick sort", new QuickSort(), Arrays.copyOf(smallArray, smallArray.length), Arrays.copyOf(largeArray, largeArray.length));
