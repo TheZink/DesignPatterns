@@ -17,9 +17,9 @@ public class CityMap extends Map {
         Random random = new Random();
 
         String[] terrainType = {
-            building.getCharacter(),
-            road.getCharacter(),
-            forest.getCharacter()   
+            building.getDescription(),
+            road.getDescription(),
+            forest.getDescription()   
         };
 
         terrainTile = new String[10][10];

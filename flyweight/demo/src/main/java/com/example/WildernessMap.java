@@ -18,9 +18,9 @@ public class WildernessMap extends Map {
         Random random = new Random();
 
         String[] terrainType = {
-            forest.getCharacter(),
-            swamp.getCharacter(),
-            water.getCharacter()   
+            forest.getDescription(),
+            swamp.getDescription(),
+            water.getDescription()   
         };
 
         terrainTile = new String[10][10];

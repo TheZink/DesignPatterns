@@ -6,17 +6,17 @@ import java.util.Map;
 import javafx.scene.image.Image;
 
 public class TileGraphicFactory {
-    private Map<Tile, Image> cache = new HashMap<>();
-
-    public void addTile(Tile tileType, Image tileImage){
-        cache.put(tileType, tileImage);
-    }
+    private Map<String, Image> cache = new HashMap<>();
 
     public Image getTileImage(String tileType){
+        
+        // Load image from resources
         if (!cache.containsKey(tileType)){
-            
+            String imagePath = "/images/" + tileType + ".png";
+            Image image = new Image(getClass().getResourceAsStream(imagePath));
+            cache.put(tileType, image);
         }
-        return null;
 
+        return cache.get(tileType);
     }
 }
